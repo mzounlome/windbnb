@@ -1,9 +1,15 @@
-import Home from "./components/Home/Home";
+import "./App.scss";
+
+import Gallery from "./components/Gallery/Gallery";
+import NavBar from "./components/Nav/NavBar";
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <NavBar />
+      <div>
+        <Gallery />
+      </div>
     </div>
   );
 }
