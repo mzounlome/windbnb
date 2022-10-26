@@ -20,13 +20,17 @@ function App() {
     }
   };
 
+  const handleLocationChange = (event) => {
+    event.preventDefault();
+    setCurrentLocation(event.target.value);
+  };
   const stays = handleLocation();
 
   return (
     <div className="App">
-      <NavBar />
+      <NavBar handleLocationChange={handleLocationChange} />
       <div>
-        <Gallery stays={stays} />
+        <Gallery stays={stays} currentLocation={currentLocation} />
       </div>
     </div>
   );

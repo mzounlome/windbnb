@@ -15,11 +15,11 @@ import {
 import { BsFillStarFill } from "react-icons/bs";
 import Row from "react-bootstrap/Row";
 
-function Gallery({ stays }) {
+function Gallery({ stays, currentLocation }) {
   return (
     <GridContainer fluid>
       <Row>
-        <GalleryHeader>Stays in Italy</GalleryHeader>
+        <GalleryHeader>Stays in {currentLocation} </GalleryHeader>
         {stays &&
           stays.map((stay) => (
             <CardContainer key={stay.id}>

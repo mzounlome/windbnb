@@ -1,12 +1,10 @@
-import { BsSearch } from "react-icons/bs";
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../../assets/img/logo.png";
 
-function NavBar() {
+function NavBar({ handleLocationChange }) {
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
@@ -16,7 +14,6 @@ function NavBar() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
-          <Nav.Link href="#action2">Add Guests</Nav.Link>
           <Nav
             className="me-auto my-2 my-lg-0"
             style={{ maxHeight: "100px" }}
@@ -24,15 +21,16 @@ function NavBar() {
           ></Nav>
           <Form className="d-flex">
             <Form.Control
-              type="search"
-              placeholder="Search"
               className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">
+              as="select"
+              onChange={handleLocationChange}
+            >
               {" "}
-              <BsSearch />{" "}
-            </Button>
+              <option>Finland</option>
+              <option>France</option>
+              <option>Italy</option>
+              <option>Sweden</option>
+            </Form.Control>
           </Form>
         </Navbar.Collapse>
       </Container>
